@@ -12,6 +12,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false
 gem "dotenv"
+gem "bcrypt", "~> 3.1.13"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
