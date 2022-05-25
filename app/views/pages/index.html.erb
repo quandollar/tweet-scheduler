@@ -1,4 +1,7 @@
 <h1>Welcome to TweetScheduler</h1>
 <% if @user %>
     Logged in as: <%= @user.email %>
+    <br>
+    <%= button_to "Sign Out", sign_out_path,  method: :delete, class: "btn btn-secondary" %>
 <% end %>
+
