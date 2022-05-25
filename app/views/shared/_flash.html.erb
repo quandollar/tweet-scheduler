@@ -1,4 +1,4 @@
-<% if notice || alert%>
+<% if flash[:notice] || flash[:alert]%>
     <p style="color: green" class="notice"><%= notice %></p>
-    <p style="color: yellow" class="alert"><%= alert %></p>
+    <p style="color: red" class="alert"><%= alert %></p>
 <% end %>
