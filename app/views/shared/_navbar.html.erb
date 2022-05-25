@@ -11,6 +11,15 @@
         <%= link_to "Home", root_path, class: "nav-link" %>
         <%= link_to "About", about_path, class: "nav-link" %>
       </div>
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+          <span class="navbar-text"><%= Current.user.email %></span>&nbsp; &nbsp;
+          <%= button_to "Sign Out", sign_out_path, method: :delete, class: "btn btn-outline-dark" %>
+        <% else %>
+          <%= link_to "Sign Up", sign_up_path, class: "btn btn-primary" %> &nbsp; &nbsp;
+          <%= link_to "Sign In", sign_in_path, class: "btn btn-outline-secondary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>
