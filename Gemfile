@@ -31,7 +31,7 @@ group :test do
   gem "webdrivers"
 end
 
-
+gem 'solargraph', group: :development
 
 gem "omniauth-twitter", "~> 1.4"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
