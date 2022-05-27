@@ -9,3 +9,25 @@
         <%= button_to "Connect a Twitter account", "/auth/twitter", method: :post, :data => {turbo: "false"}, class: "btn btn-primary" %>
     <% end %>
 </div>
+
+<% @tweets.each do |tweet| %>
+<div class="mb-3 card card-body">
+
+    <div class="me-4">
+        <%= image_tag tweet.twitter_account.image, class: "rounded-circle" %> &nbsp;
+        <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}", target: :_blank %>
+    </div>
+    <br>
+
+    <p>
+    <%= tweet.body %>
+    </p>
+    
+    <% if tweet.published? %>
+        <%= link_to "View tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", target: :_blank%>
+    <% else %>
+        <i> Scheduled for <%= l tweet.publish_at, format: :short %> </i>
+    <% end %>
+
+</div>
+<% end %>
