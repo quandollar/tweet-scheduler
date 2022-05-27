@@ -15,19 +15,20 @@
 
     <div class="me-4">
         <%= image_tag tweet.twitter_account.image, class: "rounded-circle" %> &nbsp;
-        <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}", target: :_blank %>
-    </div>
-    <br>
+        <%= link_to "@#{tweet.twitter_account.username}", "https://twitter.com/#{tweet.twitter_account.username}", target: :_blank %> &nbsp;
+        <i> Scheduled for <%= l tweet.publish_at, format: :short %> </i>
+    </div><br>
 
-    <p>
-    <%= tweet.body %>
-    </p>
+    <p><%= tweet.body %></p>
     
     <% if tweet.published? %>
         <%= link_to "View tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}", target: :_blank%>
     <% else %>
-        <i> Scheduled for <%= l tweet.publish_at, format: :short %> </i>
-    <% end %>
+        <div class="btn-group" role="group">
+            <%= link_to "Edit Tweet", edit_tweet_path(tweet), class: "btn btn-outline-secondary" %>&nbsp;
+            <%= button_to "Delete Tweet", tweet_path(tweet), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: "btn btn-outline-danger" %>
+        </div>
+    <% end %> 
 
 </div>
 <% end %>
