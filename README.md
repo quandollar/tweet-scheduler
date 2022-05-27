@@ -1,24 +1,13 @@
-# README
+# Tweet Scheduler
+[![logo](https://raw.githubusercontent.com/quandollar/tweet_scheduler/main/app/assets/images/Logo.png)]
+*Logo icon credit to Icons8. App credit to Chris Oliver, my Ruby on Rails sensei.*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Tweet Scheduler** is a web app that sends out scheduled Twitter tweets using the following technologies:
+⋅⋅* Ruby 3.1.2
+⋅⋅* Rails 7.0.3
+⋅⋅* PostgreSQL 14.2, a more powerful database vs Rails' default SQLite
+⋅⋅* Bootstrap 5, for quick and responsive front-end design
+⋅⋅* Sidekiq, for background jobs
+⋅⋅* Twitter API
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
