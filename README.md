@@ -28,5 +28,5 @@ Tweets will be sent out automatically at the scheduled times. In this example, I
 minute mark. Refreshing my Twitter account reveals the tweet that was scheduled on the TweetScheduler app.
 ![publish](https://github.com/quandollar/tweet_scheduler/blob/main/app/assets/images/publish.gif)
 
-*Credits to the folks at [Chris Oliver](https://twitter.com/excid3) for his extensive Rails educational materials.*
+*Credits to [Chris Oliver](https://twitter.com/excid3) for his extensive Rails educational materials.*
 *Logo provided for free by [Icons8](https://icons8.com/).*
