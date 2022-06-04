@@ -1,26 +1,32 @@
-# Tweet Scheduler
-*All due credits go to [Chris Oliver](https://twitter.com/excid3), my Ruby on Rails sensei.*
-
-**TweetScheduler** is a web app that sends out scheduled Twitter tweets. 
+# TweetScheduler
+This is a minimal web app that sends out scheduled Twitter tweets.
 
 It was built using the following technologies:
 - Ruby 3.1.2
 - Rails 7.0.3
 - PostgreSQL 14.2, a more powerful database vs Rails' default SQLite
 - Bootstrap 5, for quick and responsive front-end design
-- Sidekiq, for background jobs
+- Sidekiq and Redis, for background jobs
 - Twitter API
 
 ## Quick Demo
 
-We start with the app's homepage after we have created an account and signed in.
-![homepage](https://raw.githubusercontent.com/quandollar/tweet_scheduler/main/app/assets/images/1-homepage.png)
+The app is built with a simple user authentication system where you can sign up, sign in, and sign out. 
+Internal pages require signing in to access.
+![auth](https://github.com/quandollar/tweet_scheduler/blob/main/app/assets/images/auth.gif)
 
-Once connected to Twitter through their API and authorizing the Twitter app, we're taken to the Twitter Accounts page. Here, we can connect to more Twitter accounts as needed or disconnect existing accounts.
-![accounts](https://raw.githubusercontent.com/quandollar/tweet_scheduler/main/app/assets/images/2-twitter.png)
+Once signed in, users can connect to Twitter and authorize the Twitter app for permissions to post on their behalf. 
+Users can add multiple Twitter accounts and remove them as needed.
+![accounts](https://github.com/quandollar/tweet_scheduler/blob/main/app/assets/images/connect.gif)
 
-When creating new scheduled tweets, we can select the Twitter accounts that were added to this web app in the step above to send tweets from. 
-![tweet](https://raw.githubusercontent.com/quandollar/tweet_scheduler/main/app/assets/images/3-tweet.png)
+When at least one Twitter account is connected, users can schedule tweets. On the tweet schedule form, users can select
+the account that they're scheduling for, fill out the tweet content, and select the timing of tweet. 
+On the Tweets page, users can schedule more tweets and edit or delete existing tweets.  
+![edit](https://github.com/quandollar/tweet_scheduler/blob/main/app/assets/images/edit.gif)
 
-On the Tweets page, we can schedule more tweets or edit/delete existing ones.
-![scheduled](https://raw.githubusercontent.com/quandollar/tweet_scheduler/main/app/assets/images/4-scheduled.png)
+Tweets will be sent out automatically at the scheduled times. In this example, I set the tweet to be sent out at the next 
+minute mark. Refreshing my Twitter account reveals the tweet that was scheduled on the TweetScheduler app.
+![publish](https://github.com/quandollar/tweet_scheduler/blob/main/app/assets/images/publish.gif)
+
+*Credits to the folks at [Chris Oliver](https://twitter.com/excid3) for his extensive Rails educational materials.*
+*Logo provided for free by [Icons8](https://icons8.com/).*
